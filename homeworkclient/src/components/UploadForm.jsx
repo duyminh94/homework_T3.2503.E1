@@ -254,7 +254,7 @@ export default function UploadForm({ onNavigate, showToast }) {
                 id="field-image"
                 name="image"
                 type="file"
-                accept="image/jpeg,image/png,image/webp"
+                accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
                 onChange={handleImageChange}
                 aria-invalid={Boolean(fieldErrors.image)}
                 aria-describedby={fieldErrors.image ? 'image-hint error-image' : 'image-hint'}

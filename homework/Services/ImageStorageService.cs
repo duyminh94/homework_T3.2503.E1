@@ -63,9 +63,9 @@ public class ImageStorageService
 
     private string GetImagePath(string imageUrl) => Path.Combine(_environment.WebRootPath, imageUrl.TrimStart('/'));
 
-    private static string GetMimeType(string extension) => extension switch
+    private static string GetMimeType(string extension) => extension.ToLowerInvariant() switch
     {
-        ".jpg" => "image/jpeg",
+        ".jpg" or ".jpeg" => "image/jpeg",
         ".png" => "image/png",
         ".webp" => "image/webp",
         _ => throw new InvalidImageException("Định dạng ảnh không được hỗ trợ")
