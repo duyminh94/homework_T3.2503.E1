@@ -1,0 +1,125 @@
+@homework_HostAddress = http://localhost:5195
+
+GET {{homework_HostAddress}}/api/products
+Accept: application/json
+
+###
+
+GET {{homework_HostAddress}}/api/inspectors
+Accept: application/json
+
+###
+
+GET {{homework_HostAddress}}/api/defect-categories
+Accept: application/json
+
+###
+
+POST {{homework_HostAddress}}/api/analyze
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="productName"
+
+Cốc sứ trắng
+--WebAppBoundary
+Content-Disposition: form-data; name="inspectorId"
+
+1
+--WebAppBoundary
+Content-Disposition: form-data; name="image"; filename="good.jpg"
+Content-Type: image/jpeg
+
+< ../samples/good.jpg
+--WebAppBoundary--
+
+###
+
+POST {{homework_HostAddress}}/api/analyze
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="productName"
+
+Cốc sứ trắng
+--WebAppBoundary
+Content-Disposition: form-data; name="inspectorId"
+
+1
+--WebAppBoundary
+Content-Disposition: form-data; name="image"; filename="minor.jpg"
+Content-Type: image/jpeg
+
+< ../samples/minor.jpg
+--WebAppBoundary--
+
+###
+
+POST {{homework_HostAddress}}/api/analyze
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="productName"
+
+Cốc sứ trắng
+--WebAppBoundary
+Content-Disposition: form-data; name="inspectorId"
+
+1
+--WebAppBoundary
+Content-Disposition: form-data; name="image"; filename="major.jpg"
+Content-Type: image/jpeg
+
+< ../samples/major.jpg
+--WebAppBoundary--
+
+###
+
+POST {{homework_HostAddress}}/api/analyze
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="productName"
+
+Cốc sứ trắng
+--WebAppBoundary
+Content-Disposition: form-data; name="inspectorId"
+
+1
+--WebAppBoundary
+Content-Disposition: form-data; name="image"; filename="blurry.jpg"
+Content-Type: image/jpeg
+
+< ../samples/blurry.jpg
+--WebAppBoundary--
+
+###
+
+POST {{homework_HostAddress}}/api/confirm-report
+Content-Type: application/json
+
+{
+  "reportId": 1
+}
+
+###
+
+GET {{homework_HostAddress}}/api/reports?page=1&pageSize=10
+Accept: application/json
+
+###
+
+GET {{homework_HostAddress}}/api/reports?qualityStatus=Fail&isConfirmed=true
+Accept: application/json
+
+###
+
+GET {{homework_HostAddress}}/api/reports/1
+Accept: application/json
+
+###
+
+GET {{homework_HostAddress}}/api/dashboard
+Accept: application/json
+
+###

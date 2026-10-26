@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light;
+
+  --color-page: #f9f9f7;
+  --color-surface: #fcfcfb;
+  --color-text: #1b1b19;
+  --color-text-secondary: #52514e;
+  --color-border: #e1e0d9;
+  --color-border-strong: #898781;
+  --color-primary: #1c5cab;
+  --color-primary-hover: #184f95;
+  --color-on-primary: #ffffff;
+  --color-focus: #2a78d6;
+  --color-bar: #2a78d6;
+  --color-track: #e1e0d9;
+  --color-pass: #0ca30c;
+  --color-pass-text: #006300;
+  --color-pass-bg: #e6f4e6;
+  --color-fail: #d03b3b;
+  --color-fail-text: #a12020;
+  --color-fail-bg: #fbe9e9;
+  --color-pending-bg: #f1f0ea;
+  --color-toast-bg: #1b1b19;
+
+  --font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --touch-target: 44px;
+  --z-toast: 1000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  line-height: 1.25;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
